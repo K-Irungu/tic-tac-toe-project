@@ -31,3 +31,9 @@ This project is licensed under the MIT License.
 
 # Contact
 If you have any questions or suggestions, feel free to contact me at kirungu481@gmail.com
+
+# Screenshot
+<img width="879" alt="Screenshot 2024-04-20 at 21 31 53" src="https://github.com/K-Irungu/tic-tac-toe-project/assets/110017552/be3a7f37-35ae-443d-9197-7ecd0a241f7d">
+
+
+
