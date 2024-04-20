@@ -33,13 +33,9 @@ const TicTacToe = () => {
         checkWin();
     }
 
-    const clearBoard = () =>{
-        setStrikethrough('');
-        setLock(false);
-        setMessage(null);
-        data = ["", "", "", "", "", "", "", "", ""];
-        document.querySelectorAll(".box").forEach((element) => element.innerHTML='');
-    }
+    // const clearBoard = () =>{
+
+    // }
 
     const checkWin = () => {
 
@@ -94,14 +90,25 @@ const TicTacToe = () => {
             setMessage(<h1 className='title'>Draw!</h1>)
         }
 
-        setTimeout( 
-            clearBoard(), 
+        setTimeout(() =>{
+            setStrikethrough('');
+            setLock(false);
+            setMessage(null);
+            data = ["", "", "", "", "", "", "", "", ""];
+            document.querySelectorAll(".box").forEach((element) => element.innerHTML='');
+        } ,
+
+
             2500
         );
     }
 
     const reset = () => {
-        clearBoard();
+        setStrikethrough('');
+        setLock(false);
+        setMessage(null);
+        data = ["", "", "", "", "", "", "", "", ""];
+        document.querySelectorAll(".box").forEach((element) => element.innerHTML='');
         setCountO(0);
         setCountX(0);
     }
