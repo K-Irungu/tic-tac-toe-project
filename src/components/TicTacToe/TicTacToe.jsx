@@ -10,6 +10,9 @@ const TicTacToe = () => {
     let [count, setCount] = useState(1);
     let [lock, setLock] = useState(false);
     let [message, setMessage] = useState();
+    let [countX, setCountX] = useState(0);
+    let [countO, setCountO] = useState(0);
+    let [loading, setLoading] = useState(false);
 
     const toggle = (e, index)=> {
 
@@ -30,6 +33,7 @@ const TicTacToe = () => {
     }
 
     const checkWin = () => {
+
         if(data[0] === data[1] && data[1] === data[2] && data[2] !== ''){ 
             won(data[2]) 
         }
@@ -53,30 +57,52 @@ const TicTacToe = () => {
         }
         else if(data[2] === data[5] && data[5] === data[8] && data[8] !== ''){
             won(data[8])
+        } else if(!data.includes("")){
+            won(null)
         }
     }
 
     const won = (winner) => { 
         setLock(true);
-        winner === "x" ? 
-        setMessage(<h1 className='title'>Congratulations: <img src={cross} className='winnerLogo' alt='cross' /> won!</h1>):
-        setMessage(<h1 className='title'>Congratulations: <img src={circle} className='winnerLogo' alt='circle'/> won!</h1>)
-    }
+        setLoading(true);
 
+        if(winner === "x"){
+            setMessage(<h1 className='title'>Congratulations: <img src={cross} className='winnerLogo' alt='cross' /> won!</h1>);
+            setCountX(countX+1);
+        } else if(winner === "o"){
+            setMessage(<h1 className='title'>Congratulations: <img src={circle} className='winnerLogo' alt='circle'/> won!</h1>);
+            setCountO(countO+1);
+        } else if(!winner){
+            setMessage(<h1 className='title'>Draw!</h1>)
+        }
+
+        setTimeout(
+            ()=>{
+                setLoading(false);
+                setLock(false);
+                setMessage(null);
+                data = ["", "", "", "", "", "", "", "", ""];
+                document.querySelectorAll(".box").forEach((element) => element.innerHTML='');
+            },
+            2500
+        )
+    }
 
     const reset = () => {
-        setLock(false);
-        setMessage(null);
-        data = ["", "", "", "", "", "", "", "", ""];
-        document.querySelectorAll(".box").forEach((element) => element.innerHTML='')
+        setCountO(0);
+        setCountX(0);
     }
+
 
   return (
     <div className='container'>
-        {   message? 
-            message: 
-            <h1 className='title'>Tic Tac Toe Game <span>React</span></h1> 
+
+        { loading? 
+            <span className='loadingText'>Loading...</span>:
+            message? message:
+            <h1 className='title'>Tic Tac Toe Game <span>React</span></h1>
         }
+        
         <div className="board">
             <div className="column1">
                 <div className="box" onClick={(e) => { toggle(e, 0) }}></div>
@@ -94,9 +120,17 @@ const TicTacToe = () => {
                 <div className="box" onClick={(e) => { toggle(e, 8) }}></div>
             </div>
         </div>
+        <div className="stats">
+            <div className="xStats">
+                <h1>X-{countX}</h1>
+            </div>
+            <div className="yStats">
+                <h1>O-{countO}</h1>
+            </div>
+        </div>
         <button className="reset" onClick={reset}>Reset</button>
     </div>
   )
 }
 
-export default TicTacToe
+export default TicTacToe;

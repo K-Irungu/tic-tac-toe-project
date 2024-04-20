@@ -12,12 +12,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding:3vh;
+  width:600px;
+  height: 600px;
+  border-radius: 20px;
+  border: 1px solid #26ffcb;
 }
 
 .title{
   width:100%;
   color: white;
-  font-size: 60px;
+  /* font-size: 60px; */
   text-align: center;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -32,45 +37,80 @@
 }
 
 .winnerLogo{
-  width:40px;
-  height:40px;
+  width:20px;
+  height:20px;
   margin-inline: 20px;
   border: 1px solid #0f1B21;
   background: #1f3540;
   border-radius: 10px;
   padding: 10px;
 }
+
+.loadingText{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
 .board{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto; 
-  height: 500px;
-  width: 500px; 
+  margin-inline: auto; 
+  height: 400px;
+  width:400px; 
 }
 
 .box{
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   background: #1f3540;
   border: 1px solid #0f1B21;
   border-radius: 10px;
   cursor: pointer ;
-  margin:0.2vh;
+  margin-inline:0.5vh;
+  margin-block:1vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .box img{
-  height: 80px;
-  width: 80px
+  height: 45px;
+  width: 45px
 }
 
+.stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 460px; 
+  height:50px;
+}
+
+.xStats, .yStats {
+  background: #1f3540;
+  border-radius: 12px;
+  height:50px;
+  width:45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-inline: 0.5vh; */
+
+}
+
+.xStats h1 {
+  color: #ffc424;
+}
+.yStats h1 {
+  color: #26ffcb;
+}
 
 .reset{
   width: 200px;
-  height:60px;
+  height:50px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -78,8 +118,7 @@
   background: #1f3540;
   font-size: 26px;
   color:#26ffcb;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 25px;
 }
 
 
