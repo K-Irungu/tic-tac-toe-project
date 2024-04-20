@@ -12,7 +12,6 @@ const TicTacToe = () => {
     let [message, setMessage] = useState();
     let [countX, setCountX] = useState(0);
     let [countO, setCountO] = useState(0);
-    let [loading, setLoading] = useState(false);
 
     const toggle = (e, index)=> {
 
@@ -64,7 +63,6 @@ const TicTacToe = () => {
 
     const won = (winner) => { 
         setLock(true);
-        setLoading(true);
 
         if(winner === "x"){
             setMessage(<h1 className='title'>Congratulations: <img src={cross} className='winnerLogo' alt='cross' /> won!</h1>);
@@ -78,7 +76,6 @@ const TicTacToe = () => {
 
         setTimeout(
             ()=>{
-                setLoading(false);
                 setLock(false);
                 setMessage(null);
                 data = ["", "", "", "", "", "", "", "", ""];
@@ -97,9 +94,9 @@ const TicTacToe = () => {
   return (
     <div className='container'>
 
-        { loading? 
-            <span className='loadingText'>Loading...</span>:
-            message? message:
+        {   message? 
+            [message, 
+            <span className='loadingText'>Loading...</span>] :
             <h1 className='title'>Tic Tac Toe Game <span>React</span></h1>
         }
         
