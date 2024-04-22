@@ -98,7 +98,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-inline: 0.5vh; */
 
 }
 
@@ -161,38 +160,38 @@
 .strike-0-1-2 {
   height: 270px;
   width: 4px;
-  top: 49%; /* Adjust as needed */
-  left: 22.2%; /* Adjust as needed */
-  transform: translateY(-50%); /* Adjust as needed */
+  top: 49%;
+  left: 22.2%;
+  transform: translateY(-50%);
 }
 
 .strike-3-4-5 {
   height: 270px;
   width: 4px;
-  top: 49%; /* Adjust as needed */
-  left: 49.7%; /* Adjust as needed */
-  transform: translateY(-50%); /* Adjust as needed */
+  top: 49%;
+  left: 49.7%;
+  transform: translateY(-50%);
 }
 
 .strike-6-7-8{
   height: 270px;
   width: 4px;
-  top: 49%; /* Adjust as needed */
-  left: 77.2%; /* Adjust as needed */
-  transform: translateY(-50%); /* Adjust as needed */
+  top: 49%;
+  left: 77.2%;
+  transform: translateY(-50%);
 }
 
 .strike-0-4-8 {
   width: 270px;
   height: 4px;
   top: 50%;
-  left: 51.4%; 
-  transform: translate(-50%, -50%) skewY(45deg); /* Adjust as needed */
+  left: 51%; 
+  transform: translate(-50%, -50%) skewY(45deg); 
 }
 .strike-6-4-2 {
   width: 270px;
   height: 4px;
   top: 50%;
-  left: 49.4%; 
+  left: 48.7%; 
   transform: translate(-50%, -50%) skewY(-45deg);
 }

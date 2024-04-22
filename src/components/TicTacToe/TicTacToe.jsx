@@ -74,6 +74,14 @@ const TicTacToe = () => {
         setCountX(0);
     }
 
+    const grid = [0, 1, 2].map(columnIndex => (
+        <div key={columnIndex} className={`column${columnIndex + 1}`}>
+            {[0, 1, 2].map(rowIndex => (
+                <div key={rowIndex} className="box" onClick={(e) => { toggle(e, columnIndex * 3 + rowIndex) }}></div>
+            ))}
+        </div>
+    ))
+
     return (
         <div className='container'>
             {message ?
@@ -82,21 +90,7 @@ const TicTacToe = () => {
             }
             <div className="board">
                 {strikethrough ? <Strike strikethrough={strikethrough} /> : null}
-                <div className="column1">
-                    <div className="box" onClick={(e) => { toggle(e, 0) }}></div>
-                    <div className="box" onClick={(e) => { toggle(e, 1) }}></div>
-                    <div className="box" onClick={(e) => { toggle(e, 2) }}></div>
-                </div>
-                <div className="column2">
-                    <div className="box" onClick={(e) => { toggle(e, 3) }}></div>
-                    <div className="box" onClick={(e) => { toggle(e, 4) }}></div>
-                    <div className="box" onClick={(e) => { toggle(e, 5) }}></div>
-                </div>
-                <div className="column3">
-                    <div className="box" onClick={(e) => { toggle(e, 6) }}></div>
-                    <div className="box" onClick={(e) => { toggle(e, 7) }}></div>
-                    <div className="box" onClick={(e) => { toggle(e, 8) }}></div>
-                </div>
+                {grid}
             </div>
             <div className="stats">
                 <div className="xStats">
