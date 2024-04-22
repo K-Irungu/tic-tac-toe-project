@@ -137,28 +137,28 @@
   background-color: darkorange;
 }
 
-.strike-row-1 {
+.strike-0-3-6 {
   width: 70%; 
   height: 4px;
   top: 20%; 
   left: 15%;
 }
 
-.strike-row-2 {
+.strike-1-4-7 {
   width: 70%; 
   height: 4px;
   top: 48%; 
   left: 15%;
 }
 
-.strike-row-3 {
+.strike-2-5-8 {
   width: 70%; 
   height: 4px;
   top: 75.7%;
   left: 15%;
 }
 
-.strike-column-1 {
+.strike-0-1-2 {
   height: 270px;
   width: 4px;
   top: 49%; /* Adjust as needed */
@@ -166,7 +166,7 @@
   transform: translateY(-50%); /* Adjust as needed */
 }
 
-.strike-column-2 {
+.strike-3-4-5 {
   height: 270px;
   width: 4px;
   top: 49%; /* Adjust as needed */
@@ -174,7 +174,7 @@
   transform: translateY(-50%); /* Adjust as needed */
 }
 
-.strike-column-3 {
+.strike-6-7-8{
   height: 270px;
   width: 4px;
   top: 49%; /* Adjust as needed */
@@ -182,14 +182,14 @@
   transform: translateY(-50%); /* Adjust as needed */
 }
 
-.strike-diagonal-1 {
+.strike-0-4-8 {
   width: 270px;
   height: 4px;
   top: 50%;
   left: 51.4%; 
   transform: translate(-50%, -50%) skewY(45deg); /* Adjust as needed */
 }
-.strike-diagonal-2 {
+.strike-6-4-2 {
   width: 270px;
   height: 4px;
   top: 50%;
